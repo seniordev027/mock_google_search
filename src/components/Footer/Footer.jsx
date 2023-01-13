@@ -1,24 +1,11 @@
 import React from "react";
 import ModeIcon from "@mui/icons-material/Mode";
 import LinkIcon from "@mui/icons-material/Link";
-import { Box, IconButton, Link, styled } from "@mui/material";
+import { IconButton } from "@mui/material";
 
-const CustomFooter = styled(Box)({
-  display: "flex",
-  justifyContent: "space-between",
-  padding: "12px",
-});
+import { CustomFooter, CustomLink } from "./FooterStyles";
 
-const CustomLink = styled(Link)({
-  display: "flex",
-  alignItems: "center",
-  gap: "8px",
-  fontSize: "14px",
-  color: "#ffffff",
-  textDecorationColor: "#ffffff",
-});
-
-const Footer = () => {
+export const Footer = () => {
   return (
     <CustomFooter>
       <CustomLink href="#">
@@ -38,5 +25,3 @@ const Footer = () => {
     </CustomFooter>
   );
 };
-
-export default Footer;

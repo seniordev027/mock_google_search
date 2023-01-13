@@ -1,19 +1,11 @@
 import React, { useState } from "react";
-import { List, ListItem, styled } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 
-import ShortcutItem from "./ShortcutItem";
+import { CustomList, CustomListItem } from "./ShortcutListStyles";
+import { ShortcutItem } from "components/ShortcutItem";
 
-const CustomList = styled(List)({
-  padding: 0,
-});
-
-const CustomListItem = styled(ListItem)({
-  padding: 0,
-});
-
-const ShortcutList = () => {
-  const [ shortcuts, setShortcuts ] = useState([
+export const ShortcutList = () => {
+  const [shortcuts, setShortcuts] = useState([
     {
       id: 1,
       icon: <AddIcon sx={{ fill: "#000000" }} />,
@@ -23,7 +15,7 @@ const ShortcutList = () => {
 
   const handleClick = () => {
     console.log("Start doing something");
-  }
+  };
 
   return (
     <CustomList>
@@ -39,5 +31,3 @@ const ShortcutList = () => {
     </CustomList>
   );
 };
-
-export default ShortcutList;

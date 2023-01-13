@@ -1,46 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, IconButton, OutlinedInput, styled } from "@mui/material";
+import { IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import MicIcon from "@mui/icons-material/Mic";
 
-import { useSearchContext } from "../context/context";
+import { useSearchContext } from "context/context";
+import { CustomForm, CustomInput, InputContainer } from "./SearchFormStyles";
 
-const CustomForm = styled(Box)({
-  display: "flex",
-  justifyContent: "center",
-  width: "100%",
-});
-
-const InputContainer = styled(Box)({
-  display: "grid",
-  gridTemplateColumns: "52px 1fr 44px",
-  justifyItems: "center",
-  alignItems: "center",
-  maxWidth: "560px",
-  width: "100%",
-  borderRadius: "28px",
-  background: "#ffffff",
-});
-
-const CustomInput = styled(OutlinedInput)({
-  width: "100%",
-  "& .MuiInputBase-input.MuiOutlinedInput-input": {
-    padding: "12px 0",
-  },
-  "& .MuiOutlinedInput-notchedOutline": {
-    border: "none",
-  },
-});
-
-const SearchForm = () => {
+export const SearchForm = () => {
   const { setIsModal } = useSearchContext();
-
-  const {
-    inputValue,
-    setInputValue
-  } = useSearchContext();
-
+  const { inputValue, setInputValue } = useSearchContext();
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -77,5 +46,3 @@ const SearchForm = () => {
     </CustomForm>
   );
 };
-
-export default SearchForm;

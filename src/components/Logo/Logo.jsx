@@ -1,7 +1,7 @@
-import { Box } from "@mui/material";
 import React from "react";
+import { Box } from "@mui/material";
 
-const Logo = () => {
+export const Logo = () => {
   return (
     <Box>
       <svg
@@ -35,5 +35,3 @@ const Logo = () => {
     </Box>
   );
 };
-
-export default Logo;

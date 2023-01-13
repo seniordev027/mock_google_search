@@ -1,29 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { Box, List, ListItem, styled } from "@mui/material";
+import { ListItem } from "@mui/material";
 
-import { fetchSearchData } from "../api/searchAPI";
-import { useSearchContext } from "../context/context";
-import ResultItem from "./ResultItem";
+import { CustomList, MessageContainer } from "./ResultListStyles";
+import { fetchSearchData } from "api/searchAPI";
+import { useSearchContext } from "context/context";
+import { ResultItem } from "components/ResultItem";
 
-const styles = {
-  background: "#ffffff",
-  borderRadius: "8px",
-}
-
-const CustomList = styled(List)(styles);
-
-const MessageContainer = styled(Box)({
-  ...styles,
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  fontSize: "20px",
-  fontWeight: "bold",
-  textAlign: "center"
-});
-
-const ResultList = () => {
+export const ResultList = () => {
   const { setInputValue } = useSearchContext();
   const [searchData, setSearchData] = useState([]);
   const [searchParams] = useSearchParams();
@@ -38,15 +22,14 @@ const ResultList = () => {
 
     setInputValue(searchValue);
 
-    fetchSearchData(searchValue)
-    .then((searchData) => {
+    fetchSearchData(searchValue).then((searchData) => {
       setSearchData(searchData);
     });
   }, [searchValue]);
 
   return (
     <>
-      {searchData.length > 0
+      {searchData.length > 0 
       ? <CustomList>
           {searchData.map((searchItem) => (
             <ListItem key={searchItem.formattedUrl}>
@@ -60,8 +43,5 @@ const ResultList = () => {
         </MessageContainer>
       }
     </>
-    
   );
 };
-
-export default ResultList;

@@ -1,36 +1,10 @@
 import React from "react";
 import AppsIcon from "@mui/icons-material/Apps";
-import { AppBar, Avatar, IconButton, Link, styled } from "@mui/material";
+import { Avatar, IconButton } from "@mui/material";
 
-import { Box } from "@mui/system";
+import { CustomBox, CustomHeader, CustomLink } from "./HeaderStyles";
 
-const CustomHeader = styled(AppBar)({
-  position: "static",
-  flexDirection: "row",
-  justifyContent: "end",
-  alignItems: "center",
-  gap: "24px",
-  padding: "8px",
-  background: "transparent",
-  boxShadow: "none",
-});
-
-const CustomBox = styled(Box)({
-  display: "flex",
-  alignItems: "center",
-  gap: "20px",
-});
-
-const CustomLink = styled(Link)({
-  textDecoration: "none",
-  fontSize: "14px",
-  color: "inherit",
-  "&:hover": {
-    textDecoration: "underline",
-  },
-});
-
-const Header = () => {
+export const Header = () => {
   return (
     <CustomHeader>
       <CustomBox component="nav">
@@ -58,5 +32,3 @@ const Header = () => {
     </CustomHeader>
   );
 };
-
-export default Header;
