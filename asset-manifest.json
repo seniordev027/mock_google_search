@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.js": "/mock_google_search/static/js/main.4f731175.js",
+    "static/media/page_bg.jpg": "/mock_google_search/static/media/page_bg.2e74f7ba51e30ceb8e77.jpg",
+    "index.html": "/mock_google_search/index.html",
+    "main.4f731175.js.map": "/mock_google_search/static/js/main.4f731175.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.4f731175.js"
+  ]
+}
