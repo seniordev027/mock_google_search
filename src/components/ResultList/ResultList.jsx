@@ -6,42 +6,52 @@ import { CustomList, MessageContainer } from "./ResultListStyles";
 import { fetchSearchData } from "api/searchAPI";
 import { useSearchContext } from "context/context";
 import { ResultItem } from "components/ResultItem";
+import { Loader } from "components/Loader";
 
 export const ResultList = () => {
-  const { setInputValue } = useSearchContext();
   const [searchData, setSearchData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const { setInputValue } = useSearchContext();
   const [searchParams] = useSearchParams();
-  const searchValue = searchParams.get("q");
+  const searchParamsItem = searchParams.get("q");
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!searchValue) {
+    if (!searchParamsItem) {
       navigate("/");
       return;
     }
 
-    setInputValue(searchValue);
+    const getSearchData = async () => {
+      setLoading(true);
+      const response = await fetchSearchData(searchParamsItem);
+      setInputValue(searchParamsItem);
+      setSearchData(response);
+      setLoading(false);
+    };
 
-    fetchSearchData(searchValue).then((searchData) => {
-      setSearchData(searchData);
-    });
-  }, [searchValue]);
+    getSearchData();
+  }, [searchParamsItem]);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <>
-      {searchData.length > 0 
-      ? <CustomList>
+      {searchData.length > 0 ? (
+        <CustomList>
           {searchData.map((searchItem) => (
             <ListItem key={searchItem.formattedUrl}>
               <ResultItem searchItem={searchItem} />
             </ListItem>
           ))}
         </CustomList>
-
-      : <MessageContainer>
+      ) : (
+        <MessageContainer>
           Nothing was found for your request...
         </MessageContainer>
-      }
+      )}
     </>
   );
 };

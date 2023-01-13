@@ -8,3 +8,4 @@ export * from "./SearchForm";
 export * from "./ShortcutItem";
 export * from "./ShortcutList";
 export * from "./VoiceSearchModal";
+export * from "./Loader";
