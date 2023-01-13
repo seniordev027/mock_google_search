@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Box, IconButton, OutlinedInput, styled } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import MicIcon from "@mui/icons-material/Mic";
+
 import { useSearchContext } from "../context/context";
 
 const CustomForm = styled(Box)({
   display: "flex",
   justifyContent: "center",
   width: "100%",
-  padding: "0 12px",
 });
 
 const InputContainer = styled(Box)({
@@ -34,24 +34,28 @@ const CustomInput = styled(OutlinedInput)({
 });
 
 const SearchForm = () => {
+  const { setIsModal } = useSearchContext();
+
+  const {
+    inputValue,
+    setInputValue
+  } = useSearchContext();
+
   const navigate = useNavigate();
-  const [inputValue, setInputValue] = useState("");
-  const { setSearchValue } = useSearchContext();
 
   const handleClick = () => {
-    console.log("start doing something");
+    setIsModal(true);
   };
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (inputValue) {
-      setSearchValue(inputValue);
-      navigate('/search');
+      navigate(`/search?q=${inputValue}`);
     }
   };
 

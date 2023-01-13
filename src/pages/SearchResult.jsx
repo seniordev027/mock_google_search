@@ -1,22 +1,28 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Box, Container, styled } from "@mui/material";
 
-import { useSearchContext } from '../context/context';
+import SearchForm from "../components/SearchForm";
+import ResultList from "../components/ResultList";
+
+const Wrapper = styled(Box)({
+  background: "#808080",
+});
+
+const CustomContainer = styled(Container)({
+  display: "grid",
+  gridTemplateRows: "auto 1fr",
+  gap: "12px",
+  minHeight: "100vh",
+  padding: "12px",
+});
 
 const SearchResult = () => {
-  const navigate = useNavigate();
-  const { searchValue } = useSearchContext();
-
-  useEffect(() => {
-    if (!searchValue) {
-      navigate("/")
-    }
-  }, [searchValue]);
-
   return (
-    <div>
-      Search result: {searchValue}
-    </div>
+    <Wrapper>
+      <CustomContainer>
+        <SearchForm />
+        <ResultList />
+      </CustomContainer>
+    </Wrapper>
   );
 };
 

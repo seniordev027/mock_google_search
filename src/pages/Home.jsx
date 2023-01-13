@@ -9,16 +9,17 @@ const Wrapper = styled(Box)({
   display: "grid",
   gridTemplateRows: "auto 1fr auto",
   minHeight: "100vh",
+  padding: "0 12px",
   background: `url(${img}) center / cover no-repeat`,
 });
 
 const Home = () => {
   return (
-      <Wrapper>
-        <Header />
-        <Main />
-        <Footer />
-      </Wrapper>
+    <Wrapper>
+      <Header />
+      <Main />
+      <Footer />
+    </Wrapper>
   );
 };
 
