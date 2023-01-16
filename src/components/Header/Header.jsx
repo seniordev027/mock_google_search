@@ -8,8 +8,19 @@ export const Header = () => {
   return (
     <CustomHeader>
       <CustomBox component="nav">
-        <CustomLink href="#">Gmail</CustomLink>
-        <CustomLink href="#">Images</CustomLink>
+        <CustomLink
+          href="https://mail.google.com/"
+          target={"_blank"}
+        >
+          Gmail
+        </CustomLink>
+
+        <CustomLink
+          href="https://www.google.com.ua/imghp"
+          target={"_blank"}
+        >
+          Images
+        </CustomLink>
       </CustomBox>
 
       <CustomBox>
