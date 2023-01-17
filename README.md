@@ -26,10 +26,10 @@ P.S. The number of request is unfortunately limited by the provided API.
 ## Documentation
 
 > **1. Home page:** 
->- Search query page. (Imitation of the Google home page).
+>- Search query page. (Imitation of the Google home page). On this page you can make a search query, voice dialing is also supported by clicking on the microphone icon. Added the ability to change the background image by clicking the pencil icon in the lower right corner of the screen.
 >
 > **2. Search result page:** 
->- A page displaying search results with links to relevant resources..
+>- A page displaying search results with links to relevant resources. On this page you can also make search queries
 
  **Frameworks / libs dokumentation:** <br>
 - [Getting Started with React](https://reactjs.org/docs/getting-started.html) <br>
