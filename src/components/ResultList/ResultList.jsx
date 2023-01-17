@@ -4,7 +4,7 @@ import { ListItem } from "@mui/material";
 
 import { CustomList, MessageContainer } from "./ResultListStyles";
 import { fetchSearchData } from "api/searchAPI";
-import { useSearchContext } from "context/context";
+import { useSearchContext } from "context/searchContext";
 import { ResultItem } from "components/ResultItem";
 import { Loader } from "components/Loader";
 

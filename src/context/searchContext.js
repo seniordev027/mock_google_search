@@ -5,28 +5,29 @@ export const SearchContext = createContext({
   searchData: [],
   setInputValue: () => {},
   setSearchData: () => {},
-  isModal: false,
-  setIsModal: () => {},
+  voiceMode: false,
+  setVoiceMode: () => {},
+  backgrounds: [],
+  background: {},
+  setBackground: () => {},
 });
 
 export const SearchProvider = ({ children }) => {
   const [inputValue, setInputValue] = useState("");
   const [searchData, setSearchData] = useState([]);
-  const [isModal, setIsModal] = useState(false);
+  const [voiceMode, setVoiceMode] = useState(false);
 
   const value = {
     inputValue,
     searchData,
     setInputValue,
     setSearchData,
-    isModal,
-    setIsModal,
+    voiceMode,
+    setVoiceMode,
   };
 
   return (
-    <SearchContext.Provider value={value}>
-      {children}
-    </SearchContext.Provider>
+    <SearchContext.Provider value={value}>{children}</SearchContext.Provider>
   );
 };
 

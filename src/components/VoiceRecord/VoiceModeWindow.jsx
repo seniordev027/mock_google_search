@@ -3,23 +3,23 @@ import { useNavigate } from "react-router-dom";
 import CancelIcon from "@mui/icons-material/Cancel";
 
 import { recognition } from "./utins";
-import { useSearchContext } from "context/context";
+import { useSearchContext } from "context/searchContext";
+import { ModalWindow } from "components/ModalWindow";
 import {
   CustomCancelButton,
   CustomIconWrapper,
   CustomInner,
   CustomMicIcon,
   CustomMicroBorder,
-  CustomModal,
-} from "./VoiceSearchModalStyles";
+} from "./VoiceRecordStyles";
 
-export const VoiceSearchModal = () => {
-  const { isModal, setIsModal } = useSearchContext();
+export const VoiceModeWindow = () => {
+  const { voiceMode, setVoiceMode } = useSearchContext();
   const navigate = useNavigate();
 
   const handleClose = () => {
     recognition.stop();
-    setIsModal(false);
+    setVoiceMode(false);
   };
 
   const handleRecordVoice = (e) => {
@@ -39,15 +39,15 @@ export const VoiceSearchModal = () => {
   };
 
   useEffect(() => {
-    if (isModal) {
+    if (voiceMode) {
       handleRecordVoice();
     }
   });
 
   return (
     <div>
-      <CustomModal open={isModal} onClose={handleClose}>
-        <CustomInner>
+      <ModalWindow open={voiceMode}>
+        <CustomInner sx={{height: "400px"}}>
           <CustomCancelButton onClick={handleClose}>
             <CancelIcon fontSize="large" />
           </CustomCancelButton>
@@ -57,7 +57,7 @@ export const VoiceSearchModal = () => {
             <CustomMicIcon />
           </CustomIconWrapper>
         </CustomInner>
-      </CustomModal>
+      </ModalWindow>
     </div>
   );
 };

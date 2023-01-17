@@ -4,16 +4,16 @@ import { IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import MicIcon from "@mui/icons-material/Mic";
 
-import { useSearchContext } from "context/context";
+import { useSearchContext } from "context/searchContext";
 import { CustomForm, CustomInput, InputContainer } from "./SearchFormStyles";
 
 export const SearchForm = () => {
-  const { setIsModal } = useSearchContext();
+  const { setVoiceMode } = useSearchContext();
   const { inputValue, setInputValue } = useSearchContext();
   const navigate = useNavigate();
 
   const handleClick = () => {
-    setIsModal(true);
+    setVoiceMode(true);
   };
 
   const handleChange = (e) => {

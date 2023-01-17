@@ -1,22 +1,13 @@
-import { Box, IconButton, keyframes, Modal, styled } from "@mui/material";
+import { Box, IconButton, keyframes, styled } from "@mui/material";
 import MicIcon from "@mui/icons-material/Mic";
 
-export const CustomModal = styled(Modal)({
-  padding: "20px",
-  background: "#ffffff95",
-});
-
 export const CustomInner = styled(Box)({
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
+  position: "relative",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   maxWidth: "600px",
   width: "92%",
-  minHeight: "400px",
   padding: "24px",
   background: "#ffffff",
   border: "2px solid #000",

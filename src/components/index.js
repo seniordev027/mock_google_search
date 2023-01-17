@@ -7,5 +7,7 @@ export * from "./ResultList";
 export * from "./SearchForm";
 export * from "./ShortcutItem";
 export * from "./ShortcutList";
-export * from "./VoiceSearchModal";
+export * from "./ModalWindow";
+export * from "./VoiceRecord";
 export * from "./Loader";
+export * from "./BackgroundList";
