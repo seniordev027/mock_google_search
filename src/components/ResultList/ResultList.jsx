@@ -39,19 +39,18 @@ export const ResultList = () => {
 
   return (
     <>
-      {searchData.length > 0 ? (
-        <CustomList>
+      {searchData.length > 0 
+      ? <CustomList>
           {searchData.map((searchItem) => (
             <ListItem key={searchItem.formattedUrl}>
               <ResultItem searchItem={searchItem} />
             </ListItem>
           ))}
         </CustomList>
-      ) : (
-        <MessageContainer>
+      : <MessageContainer>
           Nothing was found for your request...
         </MessageContainer>
-      )}
+      }
     </>
   );
 };

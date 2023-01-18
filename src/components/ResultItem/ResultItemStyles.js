@@ -22,6 +22,5 @@ export const CustomLink = styled(Link)({
 });
 
 export const CustomDescribe = styled(Box)({
-  display: "flex",
-  alignItems: "center",
+  wordBreak:"break-word",
 });
