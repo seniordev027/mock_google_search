@@ -11,3 +11,4 @@ export * from "./ModalWindow";
 export * from "./VoiceRecord";
 export * from "./Loader";
 export * from "./BackgroundList";
+export * from "./ButtonHome";

@@ -1,11 +1,24 @@
-import { ResultList, SearchForm } from "components";
-import { CustomContainer, PageWrapper } from "./SearchResultStyles";
+import {
+  CustomContainer,
+  CustomPageTop,
+  PageWrapper
+} from "./SearchResultStyles";
+
+import {
+  ButtonHome,
+  ResultList,
+  SearchForm
+} from "components";
 
 export const SearchResult = () => {
   return (
     <PageWrapper>
       <CustomContainer>
-        <SearchForm />
+        <CustomPageTop sx={{display: "flex"}}>
+          <ButtonHome />
+          <SearchForm />
+        </CustomPageTop>
+
         <ResultList />
       </CustomContainer>
     </PageWrapper>

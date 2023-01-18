@@ -15,7 +15,9 @@ export const ResultItem = ({ searchItem }) => {
           </CustomLink>
         </Box>
 
-        <CustomDescribe>{snippet}</CustomDescribe>
+        <CustomDescribe>
+          {snippet}
+        </CustomDescribe>
       </Box>
     </Wrapper>
   );
