@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/mock_google_search/static/js/main.73160162.js",
+    "main.js": "/mock_google_search/static/js/main.cd7f4235.js",
     "static/media/jungle.webp": "/mock_google_search/static/media/jungle.67e17240198424527db9.webp",
     "static/media/ocean.webp": "/mock_google_search/static/media/ocean.1bb41ee54e4a076a5c04.webp",
     "static/media/space.webp": "/mock_google_search/static/media/space.5c3d18293623306956de.webp",
@@ -9,9 +9,9 @@
     "static/media/musclecar.webp": "/mock_google_search/static/media/musclecar.dc5f068b0626ae2947f0.webp",
     "static/media/loader.svg": "/mock_google_search/static/media/loader.2cfcd1ff6e2b66887bd463898cfec795.svg",
     "index.html": "/mock_google_search/index.html",
-    "main.73160162.js.map": "/mock_google_search/static/js/main.73160162.js.map"
+    "main.cd7f4235.js.map": "/mock_google_search/static/js/main.cd7f4235.js.map"
   },
   "entrypoints": [
-    "static/js/main.73160162.js"
+    "static/js/main.cd7f4235.js"
   ]
 }
